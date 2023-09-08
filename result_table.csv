@@ -1,0 +1,10 @@
+id,taxonname,composition,change_in_abundance,frequency,additive_type
+1,Atopobium,Lactobacillus plantarum,Decrease,Ежедневно,Пробиотик
+2,Atopobium,Цельнозерновые кукурузные хлопья,Increase,Ежедневно,Продукт
+3,Bacillus,Кестоза,Decrease,2 раза в день,Пребиотик
+4,Bacillus,Экстракт граната,Decrease,Ежедневно,Пребиотик
+5,Enterobacter,Фруктоолигосахариды,Decrease,Ежедневно,Пребиотик
+6,Enterobacter,Экстракт граната,Increase,Ежедневно,Пребиотик
+7,Peptoniphilus,Галактоолигосахариды,Decrease,Ежедневно,Пребиотик
+8,Peptoniphilus,Bifidobacterium bifidum,Increase,Ежедневно,Пробиотик
+9,Porphyromonas,"PolyGlycopleX ((α-D-глюкуроно-α-D-манно-β-D-манно-β-D-глюко), (α-L-глюкуроно-β-D-маннуроно), β-D-глюко-β-D-маннан)",Decrease,Ежедневно,Пребиотик

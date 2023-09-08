@@ -1,0 +1,31 @@
+version: "3.9"
+services:
+  db:
+    image: postgres
+    environment:
+      POSTGRES_DB: "novabiom"
+      POSTGRES_USER: "admin"
+      POSTGRES_PASSWORD: "root"
+      PGDATA: /var/lib/postgresql/data/pgdata-09-09-2023
+    ports:
+      - "5432:5432"
+    healthcheck:
+      test: [ "CMD-SHELL", "pg_isready -U admin -d novabiom" ]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+    volumes:
+      - ./result_table.csv:/var/lib/postgresql/data/csv_files/result_table.csv
+      - ./scripts/script_for_init_db.sql:/docker-entrypoint-initdb.d/script_for_init_db.sql
+      - ./pgdata:/var/lib/postgresql/data/pgdata-09-09-2023
+  api:
+    build:
+      context: .
+    env_file:
+      -  .env-not-dev
+    container_name: fastapi-app
+    ports:
+      - "8000:8000"
+    depends_on:
+      db:
+        condition: service_healthy
